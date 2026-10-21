@@ -58,7 +58,7 @@ include __DIR__ . '/includes/header.php';
         <!-- Hero Image Container -->
         <div class="relative overflow-hidden rounded-[2.5rem] bg-[#1d4640] p-2 shadow-2xl">
           <img
-            src="<?= asset('/hero.jpg') ?>"
+            src="<?= asset('hero.jpg') ?>"
             alt="Consumer reviewing guidelines on laptop"
             class="h-[420px] w-full rounded-[2.2rem] object-cover"
             onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80'"
@@ -90,7 +90,7 @@ include __DIR__ . '/includes/header.php';
             <!-- Left Image Box -->
             <div class="relative mt-8 overflow-hidden rounded-2xl bg-slate-100 shadow-sm">
               <img
-                src="<?= asset('/checks.jpg') ?>"
+                src="<?= asset('checks.jpg') ?>"
                 alt="Technician talking to customer"
                 class="h-64 w-full object-cover"
                 onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'"

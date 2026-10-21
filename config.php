@@ -49,27 +49,19 @@ function url($path = '') {
  * Helper to resolve asset paths (images, css, js)
  */
 
+
 function asset($path = '') {
     global $baseUrl;
 
     $cleanPath = ltrim(str_replace('\\', '/', $path), '/');
 
-    // Prevent paths from escaping the project directories.
     if ($cleanPath === '' || preg_match('#(^|/)\.\.(/|$)#', $cleanPath)) {
-        return $baseUrl . '/';
+        return $baseUrl . '/public/';
     }
 
-    $rootFile = __DIR__ . '/' . $cleanPath;
-    $publicFile = __DIR__ . '/public/' . $cleanPath;
-
-    // Prefer the public folder if the file exists there.
-    if (is_file($publicFile)) {
-        return $baseUrl . '/public/' . $cleanPath;
-    }
-
-    // Otherwise, use the project-root path.
-    return $baseUrl . '/' . $cleanPath;
+    return $baseUrl . '/public/' . $cleanPath;
 }
+
 
 
 // Category Guides Master Data
