@@ -48,15 +48,29 @@ function url($path = '') {
 /**
  * Helper to resolve asset paths (images, css, js)
  */
+
 function asset($path = '') {
     global $baseUrl;
-    $cleanPath = ltrim($path, '/');
-    // If the file exists in /public/, serve from public/, otherwise root
-    if (file_exists(__DIR__ . '/public/' . $cleanPath)) {
+
+    $cleanPath = ltrim(str_replace('\\', '/', $path), '/');
+
+    // Prevent paths from escaping the project directories.
+    if ($cleanPath === '' || preg_match('#(^|/)\.\.(/|$)#', $cleanPath)) {
+        return $baseUrl . '/';
+    }
+
+    $rootFile = __DIR__ . '/' . $cleanPath;
+    $publicFile = __DIR__ . '/public/' . $cleanPath;
+
+    // Prefer the public folder if the file exists there.
+    if (is_file($publicFile)) {
         return $baseUrl . '/public/' . $cleanPath;
     }
+
+    // Otherwise, use the project-root path.
     return $baseUrl . '/' . $cleanPath;
 }
+
 
 // Category Guides Master Data
 $guidesList = [
