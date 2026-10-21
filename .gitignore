@@ -1,16 +1,16 @@
-# v0 sandbox internal files
-__v0_runtime_loader.js
-__v0_devtools.tsx
-__v0_jsx-dev-runtime.ts
-.snowflake/
-.design-cache/
-.v0-trash/
-.vercel/
-
-# Environment variables
-.env*.local
-
-# Common ignores
-node_modules
-.next/
+# OS generated files
 .DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment and local configs
+.env
+.env.local
+
+# Server and PHP error logs
+error_log
+*.log
+
+# Editor directories
+.vscode/
+.idea/
