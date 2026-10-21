@@ -93,7 +93,6 @@ include __DIR__ . '/includes/header.php';
                 src="<?= asset('checks.jpg') ?>"
                 alt="Technician talking to customer"
                 class="h-64 w-full object-cover"
-                onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'"
               />
               <div class="absolute bottom-3 left-3 rounded-full bg-slate-900/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-md">
                 PRE-SERVICE CONSUMER CHECKLIST
